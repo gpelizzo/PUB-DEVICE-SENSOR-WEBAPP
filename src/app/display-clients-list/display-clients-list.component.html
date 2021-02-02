@@ -1,0 +1,16 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+    <div fxLayout="row" fxLayoutAlign="center center" *ngIf="m_listClients">
+        <div fxFlex style="text-align: right; padding-top: 15px;">
+            <mat-form-field appearance="fill">
+                <mat-select (selectionChange)="onChangeClient($event)" class="mat-select-indigo" style="font-size: 20px;" [value]="api_client_id">
+                    <mat-option *ngFor="let client of m_listClients" [value]="client.api_client_id" color="primary">{{client.nickname}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div fxFlex style="text-align: left; padding-left: 10px;">
+            <button mat-mini-fab color="primary" (click)="onRefresh($event)">
+                <mat-icon>refresh</mat-icon>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<div fxLayout="column" fxLayoutAlign="center center">
+    <div fxFlex>
+        <div fxLayout="column" fxLayoutAlign="center center" *ngIf="m_listSensorMeasures">
+            <div *ngFor="let item of m_listSensorMeasures">
+                <mat-card style="width: 300px; margin-top: 15px;">
+                    <mat-card-header fxLayout="row" fxLayoutAlign="center" class="sensor-measures-card-header">
+                        <mat-card-title class="sensor-measures-card-tile">{{item.device_name}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content class="sensor-measures-card-content">
+                        <div class="sensor-measures-card-content-temp sensor-measures-card-content-value-primary">
+                            <mat-icon svgIcon="thermometer-red" style="transform: scale(0.99)"></mat-icon><span>{{item.temperature}}°</span>
+                        </div>
+                        <div class="sensor-measures-card-content-hum sensor-measures-card-content-value-primary">
+                            <mat-icon svgIcon="drop-red" style="transform: scale(0.8)"></mat-icon><span>{{item.humidity}}%</span>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="center center" style="margin-top:40px; border-width: 1px; border-style: solid; border-color: #3f51b5; padding-top:10px; padding-bottom:8px;" > 
+                            <div fxFlex class="sensor-measures-card-content-partial-pressure sensor-measures-card-content-value-secondary">
+                                <mat-icon svgIcon="partial-pressure-red" style="transform: scale(0.8);"></mat-icon><span style="padding-top:2px;padding-left:5px;">{{item.partial_pressure}}mmHg</span>
+                            </div>
+                            <div fxFlex class="sensor-measures-card-content-dew-point-temperature sensor-measures-card-content-value-secondary">
+                                <mat-icon svgIcon="dew-point-temperature-red" style="transform: scale(0.8);"></mat-icon><span style="padding-top:2px;padding-left:2px;">{{item.dew_point_temperature}}°</span>
+                            </div>
+                        </div>
+                    </mat-card-content>
+                    <mat-card-footer>
+                        <div fxLayout="row" fxLayoutAlign="center center" class="sensor-measures-card-footer">
+                            <div fxFlex><span class="sensor-measures-card-footer-date">{{item.date}}</span></div>
+                            <div fxFlex class="sensor-measures-card-footer-action">
+                                <button mat-icon-button color="primary" (click)="onShowChartHistory(item)">
+                                    <mat-icon>bar_chart</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </mat-card-footer>
+                </mat-card>
+            </div>
+        </div>  
+    </div>
+</div>
+
+
+

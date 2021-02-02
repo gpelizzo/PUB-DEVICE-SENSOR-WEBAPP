@@ -1,0 +1,74 @@
+<div style="padding-top: 5px;" fxLayout="row" fxLayoutAlign="center">
+    <div fxFlex>
+        <div fxLayout="row" fxLayoutAlign="flex-start">
+            <div style="padding-left: 10px;">
+                <button mat-mini-fab color="primary" (click)="onClickButton('SHOW_TEMPERATURE')" [disabled]="m_bDisplayTemperature">
+                    <mat-icon svgIcon="thermometer-white" style="transform: scale(0.8)"></mat-icon>
+                </button>
+            </div>
+            <div style="padding-left: 5px;">
+                <button mat-mini-fab color="primary" (click)="onClickButton('SHOW_HUMIDITY')" [disabled]="m_bDisplayHumidity">
+                    <mat-icon svgIcon="drop-white" style="transform: scale(0.8)"></mat-icon>
+                </button>
+            </div>
+            <div style="padding-left: 5px;">
+                <button mat-mini-fab color="primary" (click)="onClickButton('SHOW_PARTIAL_PRESSURE')" [disabled]="m_bDisplayPartialPressure">
+                    <mat-icon svgIcon="partial-pressure-white" style="transform: scale(0.8)"></mat-icon>
+                </button>
+            </div>
+            <div style="padding-left: 5px;">
+                <button mat-mini-fab color="primary" (click)="onClickButton('SHOW_DEW_POINT_TEMPERATURE')" [disabled]="m_bDisplayDewPointTemperature">
+                    <mat-icon svgIcon="dew-point-temperature-white" style="transform: scale(0.8)"></mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!--    
+    <div fxFlex>
+        <div fxLayout="row" fxLayoutAlign="center">
+            <div style="font-size:xx-large; padding-top:12px; font-weight: normal; color: #3f51b5; text-align:center;">
+                <span>{{m_strMeasureType}}</span>
+            </div>
+        </div>
+    </div>
+    -->
+    <div fxFlex>
+        <div fxLayout="row" fxLayoutAlign="center">
+            <!-- <mat-label></mat-label> -->
+            <div style="padding-right: 10px;">
+                <button mat-mini-fab color="primary" (click)="onClickButton('DATE_PREVIOUS')">
+                    <mat-icon >navigate_before</mat-icon>
+                </button>
+            </div>
+            <div>
+                <mat-form-field style="width: 180px; font-size: 20px; margin-top: -15px;">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                    <input matInput [matDatepicker]="picker" [formControl]="m_datePickerForm">
+                </mat-form-field>
+            </div>
+            <div style="padding-left: 10px;">
+                <button mat-mini-fab color="primary" (click)="onClickButton('DATE_NEXT')" [disabled]="!m_bEnableButtonDateNext">
+                    <mat-icon >navigate_next</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!--
+    <div fxFlex>
+        <div fxLayout="row" fxLayoutAlign="center" style="font-size:xx-large; padding-top:12px; font-weight: bold; color: #3f51b5;">
+            <span>{{device_name}}</span>
+        </div>
+    </div>
+    -->
+    <div fxFlex>
+        <div fxLayout="row" fxLayoutAlign="flex-end" style="padding-right: 5px;">
+            <button mat-mini-fab color="primary" (click)="onClickButton('CLOSE')">
+                <mat-icon >close</mat-icon>
+            </button>
+        </div>
+    </div>
+</div>
+<div style="height: 80%; padding-left: 10px; padding-top: 5px;" *ngIf="m_googleChartData.data">
+    <google-chart #gChart [data]="m_googleChartData.data" [type]="m_googleChartData.type" style="width: 100%; height: 100%;" [options]="m_googleChartData.options" [dynamicResize]="true" [columns]="m_googleChartData.columns"></google-chart>
+</div>

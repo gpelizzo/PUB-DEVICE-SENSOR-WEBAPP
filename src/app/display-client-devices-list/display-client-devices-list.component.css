@@ -1,0 +1,58 @@
+.sensor-measures-card-header {
+    background-color: #3f51b5;
+    color: white;
+}
+
+.sensor-measures-card-tile {
+    padding-top: 10px;
+}
+
+.sensor-measures-card-content {
+    padding-top: 40px;
+}
+
+.sensor-measures-card-content-value-primary {
+    font-size:xx-large; 
+    padding-left: 10px;
+    padding-right: 15px;
+}
+
+.sensor-measures-card-content-value-secondary {
+    font-size:1.2em; 
+}
+
+.sensor-measures-card-content-temp {
+    text-align: left; 
+}
+
+.sensor-measures-card-content-hum {
+    text-align: right; 
+    padding-top:30px; 
+}
+
+.sensor-measures-card-content-partial-pressure {
+    text-align: left;
+    padding-left:8px;
+}
+
+.sensor-measures-card-content-dew-point-temperature {
+    text-align: right;
+    padding-right:8px;
+}
+
+.sensor-measures-card-footer {
+    padding-top: 8px;
+}
+
+.sensor-measures-card-footer-date {
+    text-align: left; 
+    padding-left: 8px;
+}
+
+.sensor-measures-card-footer-action {
+    text-align: right;
+}
+
+.mat-icon {
+    vertical-align: middle;
+ }
