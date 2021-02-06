@@ -9,8 +9,8 @@ export class CSettingsService {
   private m_AppSettings: any;
   private m_http: HttpClient;
 
-  constructor(l_http: HttpClient) { 
-    this.m_http = l_http;
+  constructor(p_http: HttpClient) { 
+    this.m_http = p_http;
   }
 
   public load() {
